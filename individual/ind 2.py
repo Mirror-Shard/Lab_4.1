@@ -27,7 +27,7 @@ class Time:
             seconds = int(input("Введите количество секунд: "))
         self.__update(seconds)
 
-    # Задать время числами
+    # Задать время числами 23 59 59
     def read_numbers(self, hours, minutes, seconds):
         if not hours or minutes or seconds:
             hours = int(input("Введите количество часов: "))
@@ -42,7 +42,7 @@ class Time:
     # Задать время строкой "23:59:59"
     def read_string(self, string=0):
         if not string:
-            string = input("Введите время в формате \"часы:минуты:секунды\" : ")
+            string = input("Введите время в формате \"часы:минуты:секунды\"=")
         hours = "0"
         minutes = "0"
         seconds = "0"
@@ -71,7 +71,7 @@ class Time:
         seconds = int(seconds)
         self.__update(seconds, minutes, hours)
 
-    # Обновление значений класса
+    # Обновление и упорядовачивание значений класса
     def __update(self, seconds, minutes=0, hours=0):
         # Если передано отрицательное время
         if seconds < 0:
@@ -148,4 +148,3 @@ if __name__ == '__main__':
 
     print("\n### Разница a b ###")
     a.distinction(b)
-
