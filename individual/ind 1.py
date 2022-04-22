@@ -14,36 +14,22 @@ class Interval:
     def __init__(self):
         self.first = 0
         self.second = 0
-        self.span = []
 
     def read(self, first=0, second=0):
         if first or second:
             self.first = first
             self.second = second
-            self.span = make_span(self.first, self.second)
         else:
             print("Числа не были переданы")
 
     def display(self):
-        print(self.span)
+        print(f"Интервал начинается с {self.first} и до {self.second}")
 
     def range_check(self, num):
-        # Проверка существования интервала
-        if self.span:
-            if num in self.span:
-                print("Число присутствует в интервале")
-            else:
-                print("Число отсутствует в интервале")
+        if first <= num <= second:
+            print("Число присутствует в интервале")
         else:
-            print("Интервала не существует")
-
-
-def make_span(first, second):
-    if first < second:
-        span = [i for i in range(first, second)]
-    else:
-        span = [i for i in range(first, second, -1)]
-    return span
+            print("Число отсутствует в интервале")
 
 
 if __name__ == '__main__':
