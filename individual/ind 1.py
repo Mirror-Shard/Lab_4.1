@@ -26,10 +26,7 @@ class Interval:
         print(f"Интервал начинается с {self.first} и до {self.second}")
 
     def range_check(self, num):
-        if first <= num <= second:
-            print("Число присутствует в интервале")
-        else:
-            print("Число отсутствует в интервале")
+        return first <= num <= second
 
 
 if __name__ == '__main__':
@@ -44,4 +41,7 @@ if __name__ == '__main__':
         interval.display()
         # Проверка нахождения числа в интервале
         num = int(input("Введите число: "))
-        interval.range_check(num)
+        if interval.range_check(num):
+            print("Число присутствует в интервале")
+        else:
+            print("Число отсутствует в интервале")
